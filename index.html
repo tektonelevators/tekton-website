@@ -1,433 +1,668 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexova | Innovative Business Solutions</title>
-    
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Load Inter Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            900: '#1e3a8a',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Tekton Elevators | Bringing Horizons Closer Through Precision Technology</title>
     <style>
-        /* Custom styles to hide scrollbar for cleaner look if desired, though Tailwind usually handles it */
-        .fade-in { animation: fadeIn 0.8s ease-in forwards; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        :root {
+            --navy: #002D62;
+            --gold: #C59B27;
+            --dark: #0A1118;
+            --light-bg: #F4F7FA;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Top Bar Info */
+        .top-bar {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 0.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-bar a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Navbar Layout */
+        nav {
+            background-color: var(--white);
+            padding: 1rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--navy);
+            letter-spacing: 2px;
+        }
+
+        .nav-logo-text span {
+            color: var(--gold);
+        }
+
+        .nav-tagline {
+            font-size: 0.75rem;
+            color: var(--dark);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Hero Grid Layout */
+        .hero {
+            background: linear-gradient(rgba(0, 45, 98, 0.85), rgba(10, 17, 24, 0.9)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200') no-repeat center center/cover;
+            color: var(--white);
+            padding: 8rem 10%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem auto;
+            color: #D1D5DB;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Button Frameworks */
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--white);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-gold:hover {
+            background-color: transparent;
+            color: var(--gold);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: none;
+        }
+
+        /* Triple Pill Badge Section */
+        .traction-bar {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 3rem 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .traction-item h3 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Dynamic Showcase Gallery */
+        .showcase-header {
+            text-align: center;
+            padding: 5rem 10% 2rem 10%;
+        }
+
+        .showcase-header h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+        }
+
+        .showcase-header h2 span {
+            color: var(--gold);
+        }
+
+        .gallery-grid {
+            padding: 0 10% 4rem 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-card {
+            background: var(--white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--navy);
+        }
+
+        .gallery-info {
+            padding: 1.5rem;
+        }
+
+        .gallery-info h4 {
+            color: var(--navy);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Segment Grid Components */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: var(--gold);
+            display: block;
+            margin: 0.5rem auto 0 auto;
+        }
+
+        .segments-section {
+            padding: 5rem 10%;
+            background-color: var(--white);
+        }
+
+        .segments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .segment-card {
+            background-color: var(--light-bg);
+            padding: 2rem;
+            border-radius: 6px;
+            border-left: 5px solid var(--gold);
+        }
+
+        .segment-card h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .segment-card ul {
+            list-style: none;
+        }
+
+        .segment-card ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .segment-card ul li::before {
+            content: '✓';
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Engineering Modernization Block */
+        .modernization-section {
+            padding: 5rem 10%;
+            background-color: var(--light-bg);
+        }
+
+        .modernization-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .mod-text-block h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .mod-text-block h2 span {
+            color: var(--gold);
+        }
+
+        .mod-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .mod-box {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            border-top: 3px solid var(--navy);
+        }
+
+        .mod-box h4 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Core Services Execution Row */
+        .services-section {
+            padding: 5rem 10%;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            padding: 2.5rem 2rem;
+            background-color: var(--light-bg);
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Lead Contact Center Template */
+        .contact-section {
+            padding: 5rem 10%;
+            background-color: var(--light-bg);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 4rem;
+        }
+
+        .address-box {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border-top: 3px solid var(--navy);
+        }
+
+        .address-box h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .address-box p {
+            font-size: 0.95rem;
+            color: #4B5563;
+        }
+
+        .form-container {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        /* Footer Execution */
+        footer {
+            background-color: var(--dark);
+            color: #94A3B8;
+            padding: 3rem 10% 2rem 10%;
+            text-align: center;
+            border-top: 4px solid var(--gold);
+        }
+
+        .footer-tag {
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .footer-tag span {
+            color: var(--gold);
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            margin-top: 2rem;
+            border-top: 1px solid #1E293B;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { justify-content: center; text-align: center; }
+            .hero h1 { font-size: 2.2rem; }
+            .form-container { padding: 1.5rem; }
+            .mod-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-<body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
+<body>
 
-    <!-- Navigation Bar -->
-    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="flex items-center gap-2">
-                        <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/30">
-                            N
-                        </div>
-                        <span class="font-bold text-2xl tracking-tight text-gray-900">Nexova</span>
-                    </a>
+    <div class="top-bar">
+        <div>
+            📞 Call Support: <strong>8925448131</strong> | <strong>9500158530</strong>
+        </div>
+        <div>
+            ✉️ Email: <a href="mailto:info@tektonelevators.com">info@tektonelevators.com</a>
+        </div>
+    </div>
+
+    <nav>
+        <div>
+            <div class="nav-logo-text">TEKTON <span>ELEVATORS</span></div>
+            <div class="nav-tagline">Bringing Horizons Closer Through Precision Technology</div>
+        </div>
+        <div>
+            <a href="https://forms.gle/hYQVUqxpS92t5RUK8" target="_blank" class="btn btn-gold" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Service Request Form</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Advanced Vertical <span>Transport Solutions</span></h1>
+        <p>Your unique specifications meet our high-precision engineering. We manufacture, install, and service intelligent elevators engineered for safety and built for life.</p>
+        <div class="cta-group">
+            <a href="https://wa.me/918925448131" target="_blank" class="btn btn-whatsapp">💬 WhatsApp Consultation</a>
+            <a href="https://forms.gle/hYQVUqxpS92t5RUK8" target="_blank" class="btn btn-gold">Submit Service Request</a>
+            <a href="#contact" class="btn btn-outline">Contact Offices</a>
+        </div>
+    </section>
+
+    <section class="traction-bar">
+        <div class="traction-item">
+            <h3>Precision</h3>
+            <p>Your unique specs, Our precision engineering alignment.</p>
+        </div>
+        <div class="traction-item">
+            <h3>Safety</h3>
+            <p>Engineered for safety. Built comprehensively for life.</p>
+        </div>
+        <div class="traction-item">
+            <h3>Innovation</h3>
+            <p>Intelligent engineering lifts ensuring seamless motion.</p>
+        </div>
+    </section>
+
+    <section class="showcase-section">
+        <div class="showcase-header">
+            <h2>Premium System <span>Visual Showcase</span></h2>
+            <p>Explore architectural design structures engineered to blend luxury with heavy engineering safety parameters.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=600" alt="Glass Door Panoramic Lift">
+                <div class="gallery-info">
+                    <h4>Panoramic Glass Door Elevators</h4>
+                    <p>Fluid engineering designs that provide sweeping viewpoints while optimizing core structural workspace integrity.</p>
                 </div>
-
-                <!-- Desktop Menu -->
-                <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Home</a>
-                    <a href="#services" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Services</a>
-                    <a href="#about" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">About Us</a>
-                    <a href="#contact" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Contact</a>
-                    <a href="#contact" class="bg-brand-600 text-white px-6 py-2.5 rounded-full font-medium hover:bg-brand-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                        Get Started
-                    </a>
-                </nav>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none p-2">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=600" alt="Brass Gold Premium Lift Entry">
+                <div class="gallery-info">
+                    <h4>Luxury Brass Gold Custom Finishes</h4>
+                    <p>Electroplated brass configurations engineered to present elite architectural presence across high-end villas and commercial hubs.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=600" alt="Futuristic Capsule Lift Design">
+                <div class="gallery-info">
+                    <h4>High-Speed Capsule Elevators</h4>
+                    <p>Aerodynamic external capsule shells running real-time smart sensor arrays for premium vertical mobility profiles.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full">
-            <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="#home" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">Home</a>
-                <a href="#services" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">Services</a>
-                <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">About Us</a>
-                <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">Contact</a>
-                <div class="pt-4 pb-2">
-                    <a href="#contact" class="block w-full text-center bg-brand-600 text-white px-5 py-3 rounded-xl font-medium hover:bg-brand-700">
-                        Get Started
-                    </a>
+    <section class="segments-section">
+        <h2 class="section-title">Specialized Core Systems</h2>
+        <div class="segments-grid">
+            <div class="segment-card">
+                <h3>Residential Elevators</h3>
+                <ul>
+                    <li>Home Lifts</li>
+                    <li>Villa Elevators</li>
+                    <li>Compact Space Solutions</li>
+                </ul>
+            </div>
+            <div class="segment-card">
+                <h3>Passenger Elevators</h3>
+                <ul>
+                    <li>Commercial Buildings</li>
+                    <li>Apartment Complexes</li>
+                    <li>Corporate Offices</li>
+                </ul>
+            </div>
+            <div class="segment-card">
+                <h3>Hospital Elevators</h3>
+                <ul>
+                    <li>Bed Elevators</li>
+                    <li>Stretcher Lifts</li>
+                    <li>Medical Facility Layouts</li>
+                </ul>
+            </div>
+            <div class="segment-card">
+                <h3>Industrial Solutions</h3>
+                <ul>
+                    <li>Heavy Goods Lifts</li>
+                    <li>Freight Elevators</li>
+                    <li>Warehouse Material Systems</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="modernization-section">
+        <div class="modernization-container">
+            <div class="mod-text-block">
+                <h2>System <span>Modernization</span> & Complete Replacement</h2>
+                <p>Maximize asset lifespan and ensure full code compliance. We transition aging physical layouts into elite smart transport mechanisms with minimal facility downtime.</p>
+                <a href="https://forms.gle/hYQVUqxpS92t5RUK8" target="_blank" class="btn btn-gold" style="margin-top:1rem;">Request Assessment Form</a>
+            </div>
+            <div class="mod-grid">
+                <div class="mod-box">
+                    <h4>Controller Upgrades</h4>
+                    <p>Microprocessor logic replacement to resolve operational errors.</p>
+                </div>
+                <div class="mod-box">
+                    <h4>Safety Enhancements</h4>
+                    <p>Advanced governor adjustments and instantaneous emergency braking configurations.</p>
+                </div>
+                <div class="mod-box">
+                    <h4>Cabin Refurbishments</h4>
+                    <p>Upgrading mechanical structures to premium glass or steel designs.</p>
+                </div>
+                <div class="mod-box">
+                    <h4>Total Adaptation</h4>
+                    <p>Old mechanical structural adaptation engineered for future scaling layouts.</p>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Hero Section -->
-    <main class="flex-grow">
-        <section id="home" class="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <!-- Background decoration -->
-                <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-100 blur-3xl opacity-50 z-0"></div>
-                <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 rounded-full bg-blue-100 blur-3xl opacity-50 z-0"></div>
-                
-                <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center relative z-10 fade-in">
-                    <!-- Hero Content -->
-                    <div class="lg:col-span-6 text-center lg:text-left mb-12 lg:mb-0">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold mb-6">
-                            <span class="flex h-2 w-2 rounded-full bg-brand-600"></span>
-                            Empowering Your Growth
-                        </div>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6 tracking-tight">
-                            Build a Better Future for Your <span class="text-brand-600">Business</span>.
-                        </h1>
-                        <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-                            We provide innovative solutions, strategic consulting, and cutting-edge technology to help your company scale faster and smarter in today's competitive landscape.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <a href="#contact" class="bg-brand-600 text-white px-8 py-3.5 rounded-full font-semibold text-lg hover:bg-brand-700 transition-all shadow-lg shadow-brand-500/30 flex items-center justify-center gap-2 group">
-                                Start Your Journey
-                                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </a>
-                            <a href="#services" class="bg-white text-gray-800 border border-gray-200 px-8 py-3.5 rounded-full font-semibold text-lg hover:bg-gray-50 transition-all shadow-sm flex items-center justify-center">
-                                Explore Services
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Hero Image -->
-                    <div class="lg:col-span-6 relative">
-                        <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-200/50 border border-gray-100">
-                            <!-- Using a placeholder that looks like a corporate office -->
-                            <img src="https://placehold.co/800x600/f8fafc/1e293b?text=Corporate+Team+Collaboration" alt="Team Collaboration" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/800x600/eeeeee/999999?text=Image+Unavailable'">
-                        </div>
-                        <!-- Floating Stats Card -->
-                        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block animate-bounce" style="animation-duration: 3s;">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-gray-500 font-medium">Annual Growth</p>
-                                    <p class="text-2xl font-bold text-gray-900">+124%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <section class="services-section">
+        <h2 class="section-title">Turnkey Service Lifecycles</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Installation</h3>
+                <p>Comprehensive site assessments, full architectural design optimization blueprints, and clean, modular physical installations.</p>
+            </div>
+            <div class="service-card">
+                <h3>Maintenance & AMC</h3>
+                <p>Rigorous preventive inspections, custom Annual Maintenance Contracts (AMC), and certified mechanical asset protection.</p>
+            </div>
+            <div class="service-card">
+                <h3>24/7 Rapid Response</h3>
+                <p>Round-the-clock physical emergency response squads coupled with immediate technical spare parts support tracks.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Request an Engineering Consultation</h2>
+        <div class="contact-grid">
+            
+            <div>
+                <div class="address-box">
+                    <h3>Headquarters Office (Kovilpatti)</h3>
+                    <p>No.32, Kathiresan Kovil Road 3rd Street,</p>
+                    <p>Kovilpatti, Tamil Nadu - 628502</p>
+                </div>
+                <div class="address-box">
+                    <h3>Branch Office (Tenkasi)</h3>
+                    <p>1/235-2, South Street, Kadanganeri,</p>
+                    <p>Tenkasi, Tamil Nadu - 627854</p>
+                </div>
+                <div class="address-box" style="background: var(--navy); color: white;">
+                    <h3 style="color: var(--gold)">Instant Mapping Location</h3>
+                    <p style="color: white; margin-bottom: 1rem;">View certified office locations directly via Google Maps route networks:</p>
+                    <a href="https://share.google/DQlq5l0yOCClo09Tz" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem; width:100%;">📍 Open Google Maps Route</a>
                 </div>
             </div>
-        </section>
 
-        <!-- Services Section -->
-        <section id="services" class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-brand-600 font-semibold tracking-wide uppercase mb-3">Our Services</h2>
-                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tailored Solutions for Your Success</h3>
-                    <p class="text-lg text-gray-600">We offer a comprehensive suite of services designed to address your unique challenges and drive sustainable growth.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl hover:bg-white transition-all duration-300 border border-transparent hover:border-gray-100 group">
-                        <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Strategic Consulting</h4>
-                        <p class="text-gray-600 leading-relaxed mb-4">Expert guidance to optimize your operations, refine your business model, and enter new markets with confidence.</p>
-                        <a href="#" class="text-brand-600 font-semibold inline-flex items-center gap-1 hover:text-brand-700">Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+            <div class="form-container">
+                <form onsubmit="alert('Thank you! Your request has been logged. Please make sure to complete the official external Forms link at the top for automated database entry.'); return false;">
+                    <div class="form-group">
+                        <label>Contact Person / Enterprise Name</label>
+                        <input type="text" placeholder="Enter your full name or company" required>
                     </div>
-
-                    <!-- Service 2 -->
-                    <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl hover:bg-white transition-all duration-300 border border-transparent hover:border-gray-100 group">
-                        <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Digital Transformation</h4>
-                        <p class="text-gray-600 leading-relaxed mb-4">Modernize your tech stack, automate workflows, and leverage data analytics to stay ahead of the curve.</p>
-                        <a href="#" class="text-brand-600 font-semibold inline-flex items-center gap-1 hover:text-brand-700">Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+                    <div class="form-group">
+                        <label>Location Site</label>
+                        <input type="text" placeholder="e.g., Kovilpatti, Tenkasi, Tirunelveli" required>
                     </div>
-
-                    <!-- Service 3 -->
-                    <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl hover:bg-white transition-all duration-300 border border-transparent hover:border-gray-100 group">
-                        <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Team Augmentation</h4>
-                        <p class="text-gray-600 leading-relaxed mb-4">Access top-tier talent to fill skill gaps and accelerate your project delivery without overhead costs.</p>
-                        <a href="#" class="text-brand-600 font-semibold inline-flex items-center gap-1 hover:text-brand-700">Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+                    <div class="form-group">
+                        <label>System Vertical Required</label>
+                        <select required>
+                            <option value="">-- Choose Application --</option>
+                            <option value="residential">Residential Lifts / Villa Systems</option>
+                            <option value="passenger">Commercial Passenger Elevators</option>
+                            <option value="hospital">Hospital Stretcher Infrastructure</option>
+                            <option value="industrial">Heavy Material / Goods Moving</option>
+                            <option value="modernization">System Modernization / AMC Contract</option>
+                        </select>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label>Specific Architectural Project Details</label>
+                        <textarea rows="4" placeholder="Describe the number of stops, dimensional layouts, or loading profiles..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-gold" style="width: 100%;">Log Local Inquiry Profile</button>
+                </form>
             </div>
-        </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-20 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="mb-12 lg:mb-0 relative">
-                        <!-- Decorative square behind image -->
-                        <div class="absolute -top-4 -left-4 w-full h-full bg-brand-600 rounded-3xl opacity-10"></div>
-                        <img src="https://placehold.co/600x700/f1f5f9/475569?text=About+Our+Company" alt="About Us" class="relative z-10 rounded-3xl shadow-xl w-full object-cover">
-                    </div>
-                    
-                    <div>
-                        <h2 class="text-brand-600 font-semibold tracking-wide uppercase mb-3">About Nexova</h2>
-                        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Driven by Innovation. Defined by Results.</h3>
-                        <p class="text-lg text-gray-600 mb-6">
-                            Founded in 2015, Nexova has grown from a small consultancy into a global leader in business transformation. We believe that every challenge is an opportunity for innovation.
-                        </p>
-                        <p class="text-lg text-gray-600 mb-8">
-                            Our team of dedicated professionals works alongside you, combining industry expertise with technical prowess to deliver solutions that are not just effective, but transformative.
-                        </p>
-                        
-                        <div class="grid grid-cols-2 gap-6 pt-6 border-t border-gray-200">
-                            <div>
-                                <h4 class="text-4xl font-extrabold text-brand-600 mb-2">500+</h4>
-                                <p class="text-gray-600 font-medium">Happy Clients</p>
-                            </div>
-                            <div>
-                                <h4 class="text-4xl font-extrabold text-brand-600 mb-2">15+</h4>
-                                <p class="text-gray-600 font-medium">Years Experience</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-white relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-brand-900 rounded-3xl overflow-hidden shadow-2xl">
-                    <div class="lg:grid lg:grid-cols-5">
-                        
-                        <!-- Contact Info -->
-                        <div class="lg:col-span-2 p-10 md:p-12 text-white flex flex-col justify-between relative overflow-hidden">
-                            <!-- Background decoration -->
-                            <div class="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 bg-white opacity-5 rounded-full blur-2xl"></div>
-                            
-                            <div class="relative z-10">
-                                <h3 class="text-3xl font-bold mb-4">Let's Talk</h3>
-                                <p class="text-brand-100 mb-10 text-lg">Ready to start your next big project? Get in touch with our team today.</p>
-                                
-                                <div class="space-y-6">
-                                    <div class="flex items-start gap-4">
-                                        <svg class="w-6 h-6 text-brand-300 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                        <div>
-                                            <h5 class="font-semibold text-white">Our Headquarters</h5>
-                                            <p class="text-brand-100">123 Innovation Drive<br>Tech District, NY 10001</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start gap-4">
-                                        <svg class="w-6 h-6 text-brand-300 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                        <div>
-                                            <h5 class="font-semibold text-white">Email Us</h5>
-                                            <p class="text-brand-100">hello@nexova.com</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start gap-4">
-                                        <svg class="w-6 h-6 text-brand-300 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                                        <div>
-                                            <h5 class="font-semibold text-white">Call Us</h5>
-                                            <p class="text-brand-100">+1 (555) 123-4567</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Contact Form -->
-                        <div class="lg:col-span-3 bg-white p-10 md:p-12">
-                            <!-- Custom Message Box for Form Status (Hidden by Default) -->
-                            <div id="form-message" class="hidden mb-6 p-4 rounded-xl flex items-center gap-3">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <span id="form-message-text" class="font-medium"></span>
-                            </div>
-
-                            <form id="contact-form" class="space-y-6">
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <div>
-                                        <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-                                        <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="John">
-                                    </div>
-                                    <div>
-                                        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                                        <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="Doe">
-                                    </div>
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="john@company.com">
-                                </div>
-                                <div>
-                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">How can we help?</label>
-                                    <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none resize-none" placeholder="Tell us about your project..."></textarea>
-                                </div>
-                                <button type="submit" class="w-full bg-brand-600 text-white font-semibold py-3.5 px-6 rounded-xl hover:bg-brand-700 transition-colors shadow-md flex justify-center items-center gap-2">
-                                    Send Message
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 pt-16 pb-8 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-1">
-                    <a href="#" class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">N</div>
-                        <span class="font-bold text-xl tracking-tight text-white">Nexova</span>
-                    </a>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Transforming businesses through innovative technology and strategic expertise.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">News & Press</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#services" class="hover:text-white transition-colors">Consulting</a></li>
-                        <li><a href="#services" class="hover:text-white transition-colors">Digital Transformation</a></li>
-                        <li><a href="#services" class="hover:text-white transition-colors">Team Augmentation</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Legal</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Cookie Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-sm">
-                    &copy; <span id="year"></span> Nexova Inc. All rights reserved.
-                </p>
-                <!-- Social Links -->
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                        <span class="sr-only">Twitter</span>
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                        <span class="sr-only">LinkedIn</span>
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path></svg>
-                    </a>
-                </div>
-            </div>
+    <footer>
+        <div class="footer-tag">TEKTON <span>ELEVATORS</span></div>
+        <p>Bringing Horizons Closer Through Precision Technology.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Registered Offices: Kovilpatti & Tenkasi, Tamil Nadu, India.</p>
+        <div class="footer-copyright">
+            &copy; 2026 Tekton Elevators Private Limited. All Rights Reserved. Engineered to Elevate.
         </div>
     </footer>
 
-    <!-- Interactivity Scripts -->
-    <script>
-        // Set dynamic year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Mobile Menu Toggle Logic
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-            
-            // Toggle between Hamburger and X icon
-            if(menu.classList.contains('hidden')){
-                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-            } else {
-                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-            }
-        });
-
-        // Close mobile menu on link click
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-            });
-        });
-
-        // Form Submission Logic (Mocks a submission and shows a success message inline)
-        const contactForm = document.getElementById('contact-form');
-        const formMessage = document.getElementById('form-message');
-        const formMessageText = document.getElementById('form-message-text');
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevent actual page reload
-            
-            // Simulate processing
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'Sending...';
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-                // Show success message
-                formMessage.classList.remove('hidden', 'bg-red-50', 'text-red-700');
-                formMessage.classList.add('bg-green-50', 'text-green-700');
-                formMessageText.textContent = "Thank you! Your message has been sent successfully.";
-                
-                // Reset form and button
-                contactForm.reset();
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-                
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.classList.add('hidden');
-                }, 5000);
-            }, 1000);
-        });
-    </script>
 </body>
 </html>
