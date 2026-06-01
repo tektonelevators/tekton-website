@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekton Elevators | Smart Vertical Transportation</title>
+    <style>
+        :root {
+            --primary: #0F172A;
+            --accent: #F97316;
+            --text-light: #F8FAFC;
+            --bg-light: #F1F5F9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--primary);
+        }
+
+        /* Navbar Styling */
+        nav {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--accent);
+            font-weight: 300;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200') no-repeat center center/cover;
+            color: var(--text-light);
+            padding: 6rem 10%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #94A3B8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Core Values / Grid */
+        .services {
+            padding: 4rem 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--accent);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background-color: white;
+            padding: 4rem 10%;
+            max-width: 600px;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #EA580C;
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: #64748B;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #334155;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">TEKTON <span>ELEVATORS</span></div>
+    </nav>
+
+    <section class="hero">
+        <h1>Next-Generation Vertical Transportation</h1>
+        <p>Engineered for maximum safety. Driven by intelligent automation and real-time diagnostic systems.</p>
+    </section>
+
+    <section class="services">
+        <div class="card">
+            <h3>Premium Elevator Installs</h3>
+            <p>Custom passenger and freight elevator systems built specifically for modern residential layouts and complex industrial hubs.</p>
+        </div>
+        <div class="card">
+            <h3>Smart IoT Automation</h3>
+            <p>Integrating real-time sensor logic and predictive maintenance analytics to eliminate downtime before it happens.</p>
+        </div>
+        <div class="card">
+            <h3>Elite AMC & Maintenance</h3>
+            <p>Round-the-clock rapid response teams ensuring your engineering systems remain compliant, safe, and highly efficient.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>Request an Engineering Consultation</h2>
+        <form>
+            <div class="form-group">
+                <label>Corporate Name / Contact Person</label>
+                <input type="text" placeholder="Enter your name or business" required>
+            </div>
+            <div class="form-group">
+                <label>Area of Project Site</label>
+                <input type="text" placeholder="e.g., Chennai, Coimbatore, Kovilpatti" required>
+            </div>
+            <div class="form-group">
+                <label>Requirement Type</label>
+                <select required>
+                    <option value="">-- Select Option --</option>
+                    <option value="new">New Elevator Installation</option>
+                    <option value="amc">Maintenance / AMC Contract</option>
+                    <option value="modern">System Modernization</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Submit Request</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2026 Tekton Elevators Private Limited. All Rights Reserved. Engineered to Elevate.
+    </footer>
+
+</body>
+</html>
