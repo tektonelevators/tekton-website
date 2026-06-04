@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tekton Elevators | Bringing Horizons Closer Through Precision Technology</title>
+    <!-- Google Fonts: Elegant Editorial Heading Font paired with Clean Body Text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --navy: #002D62;
@@ -11,19 +16,27 @@
             --dark: #0A1118;
             --light-bg: #F4F7FA;
             --white: #FFFFFF;
+            /* Luxury Font Pair Definitions */
+            --font-luxury: 'Playfair Display', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', Arial, sans-serif;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
             background-color: var(--light-bg);
             color: var(--dark);
+            font-family: var(--font-body);
             line-height: 1.6;
+        }
+
+        /* Luxury Heading Elements Override */
+        h1, h2, h3, .nav-logo-text {
+            font-family: var(--font-luxury);
         }
 
         /* Top Bar Info */
@@ -58,14 +71,16 @@
         }
 
         .nav-logo-text {
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-size: 1.9rem;
+            font-weight: 800;
             color: var(--navy);
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .nav-logo-text span {
             color: var(--gold);
+            font-weight: 400;
+            font-style: italic;
         }
 
         .nav-tagline {
@@ -73,6 +88,7 @@
             color: var(--dark);
             letter-spacing: 1px;
             text-transform: uppercase;
+            font-weight: 500;
         }
 
         /* Hero Grid Layout */
@@ -84,21 +100,25 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
+            font-size: 3.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
         }
 
         .hero h1 span {
             color: var(--gold);
+            font-weight: 400;
+            font-style: italic;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             max-width: 800px;
             margin: 0 auto 2.5rem auto;
             color: #D1D5DB;
+            font-weight: 300;
         }
 
         .cta-group {
@@ -111,7 +131,7 @@
         /* Button Frameworks */
         .btn {
             padding: 1rem 2rem;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             border-radius: 4px;
             text-decoration: none;
@@ -119,6 +139,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            letter-spacing: 0.5px;
         }
 
         .btn-gold {
@@ -148,6 +169,10 @@
             color: white;
             border: none;
         }
+        
+        .btn-whatsapp:hover {
+            background-color: #1cbd55;
+        }
 
         /* Triple Pill Badge Section */
         .traction-bar {
@@ -163,10 +188,15 @@
 
         .traction-item h3 {
             color: var(--gold);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+        }
+        
+        .traction-item p {
+            font-weight: 300;
+            font-size: 0.95rem;
+            color: #E2E8F0;
         }
 
         /* Dynamic Showcase Gallery */
@@ -176,12 +206,19 @@
         }
 
         .showcase-header h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--navy);
         }
 
         .showcase-header h2 span {
             color: var(--gold);
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .showcase-header p {
+            font-weight: 300;
+            color: #4B5563;
         }
 
         .gallery-grid {
@@ -210,15 +247,21 @@
         }
 
         .gallery-info h4 {
+            font-family: var(--font-luxury);
             color: var(--navy);
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             margin-bottom: 0.5rem;
+        }
+        
+        .gallery-info p {
+            font-size: 0.9rem;
+            color: #4B5563;
         }
 
         /* Segment Grid Components */
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--navy);
             margin-bottom: 3rem;
             position: relative;
@@ -226,11 +269,11 @@
 
         .section-title::after {
             content: '';
-            width: 60px;
-            height: 3px;
+            width: 50px;
+            height: 2px;
             background-color: var(--gold);
             display: block;
-            margin: 0.5rem auto 0 auto;
+            margin: 0.75rem auto 0 auto;
         }
 
         .segments-section {
@@ -246,15 +289,17 @@
 
         .segment-card {
             background-color: var(--light-bg);
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             border-radius: 6px;
-            border-left: 5px solid var(--gold);
+            border-top: 4px solid var(--gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .segment-card h3 {
             color: var(--navy);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.4rem;
+            font-weight: 700;
         }
 
         .segment-card ul {
@@ -262,10 +307,11 @@
         }
 
         .segment-card ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             font-size: 0.95rem;
-            padding-left: 1.2rem;
+            padding-left: 1.4rem;
             position: relative;
+            color: #334155;
         }
 
         .segment-card ul li::before {
@@ -290,13 +336,21 @@
         }
 
         .mod-text-block h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--navy);
             margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
         .mod-text-block h2 span {
             color: var(--gold);
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .mod-text-block p {
+            font-weight: 300;
+            color: #334155;
         }
 
         .mod-grid {
@@ -314,15 +368,21 @@
         }
 
         .mod-box h4 {
+            font-family: var(--font-luxury);
             color: var(--gold);
             margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .mod-box p {
+            font-size: 0.88rem;
+            color: #4B5563;
         }
 
-        /* Core Services Execution Row */
+        /* Core Services - TEXT CENTER ALIGNED */
         .services-section {
             padding: 5rem 10%;
             background-color: var(--white);
-            text-align: center;
         }
 
         .services-grid {
@@ -332,23 +392,33 @@
         }
 
         .service-card {
-            padding: 2.5rem 2rem;
+            padding: 3rem 2rem;
             background-color: var(--light-bg);
             border-radius: 6px;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            text-align: center; /* Centers all content inside headings and body cards */
+            border-bottom: 3px solid transparent;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
+            border-bottom-color: var(--gold);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
         }
 
         .service-card h3 {
             color: var(--navy);
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .service-card p {
+            color: #4B5563;
+            font-size: 0.95rem;
         }
 
-        /* Lead Contact Center Template */
+        /* Lead Contact Center Container Layout */
         .contact-section {
             padding: 5rem 10%;
             background-color: var(--light-bg);
@@ -358,6 +428,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 4rem;
+            align-items: start;
         }
 
         .address-box {
@@ -372,7 +443,8 @@
         .address-box h3 {
             color: var(--navy);
             margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            font-weight: 700;
         }
 
         .address-box p {
@@ -380,50 +452,46 @@
             color: #4B5563;
         }
 
+        /* Responsive Form Framing Workspace */
         .form-container {
             background-color: var(--white);
-            padding: 3rem;
+            padding: 1rem;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--navy);
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
+            overflow: hidden;
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #CBD5E1;
-            border-radius: 4px;
-            font-size: 1rem;
+        }
+        
+        .form-container iframe {
+            width: 100%;
+            display: block;
         }
 
         /* Footer Execution */
         footer {
             background-color: var(--dark);
             color: #94A3B8;
-            padding: 3rem 10% 2rem 10%;
+            padding: 4rem 10% 2rem 10%;
             text-align: center;
             border-top: 4px solid var(--gold);
         }
 
         .footer-tag {
             color: var(--white);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 1rem;
+            letter-spacing: 1px;
         }
 
         .footer-tag span {
             color: var(--gold);
+            font-style: italic;
+            font-weight: 400;
+        }
+        
+        footer p {
+            font-weight: 300;
         }
 
         .footer-copyright {
@@ -431,18 +499,21 @@
             margin-top: 2rem;
             border-top: 1px solid #1E293B;
             padding-top: 1.5rem;
+            color: #64748B;
         }
 
         @media (max-width: 768px) {
             .top-bar { justify-content: center; text-align: center; }
-            .hero h1 { font-size: 2.2rem; }
-            .form-container { padding: 1.5rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2.2rem; }
+            .form-container { padding: 0.25rem; }
             .mod-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Contacts Banner Header -->
     <div class="top-bar">
         <div>
             📞 Call Support: <strong>8925448131</strong> | <strong>9500158530</strong>
@@ -452,26 +523,29 @@
         </div>
     </div>
 
+    <!-- Sticky Main Navigation -->
     <nav>
         <div>
             <div class="nav-logo-text">TEKTON <span>ELEVATORS</span></div>
             <div class="nav-tagline">Bringing Horizons Closer Through Precision Technology</div>
         </div>
         <div>
-            <a href="https://forms.gle/hYQVUqxpS92t5RUK8" target="_blank" class="btn btn-gold" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Service Request Form</a>
+            <a href="#consultation" class="btn btn-gold" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Service Request Form</a>
         </div>
     </nav>
 
+    <!-- Visual Hero Frame utilizing the Custom Punchy Slogan -->
     <section class="hero">
-        <h1>Advanced Vertical <span>Transport Solutions</span></h1>
-        <p>Your unique specifications meet our high-precision engineering. We manufacture, install, and service intelligent elevators engineered for safety and built for life.</p>
+        <h1>We lift you to your goal.<br><span>It may be the horizon. No problem.</span></h1>
+        <p>Your unique specifications meet our high-precision engineering. We manufacture, install, and service intelligent elevators engineered for absolute safety and built for life.</p>
         <div class="cta-group">
-            <a href="https://wa.me/918925448131" target="_blank" class="btn btn-whatsapp">💬 WhatsApp Consultation</a>
-            <a href="https://forms.gle/hYQVUqxpS92t5RUK8" target="_blank" class="btn btn-gold">Submit Service Request</a>
+            <a href="https://wa.me/918925448131" target="_blank" class="btn btn-whatsapp">ᯓ➤ WhatsApp Consultation</a>
+            <a href="#consultation" class="btn btn-gold">Submit Service Request</a>
             <a href="#contact" class="btn btn-outline">Contact Offices</a>
         </div>
     </section>
 
+    <!-- Structural Values Elements Ribbon -->
     <section class="traction-bar">
         <div class="traction-item">
             <h3>Precision</h3>
@@ -483,10 +557,11 @@
         </div>
         <div class="traction-item">
             <h3>Innovation</h3>
-            <p>Intelligent lifts. seamless motion.</p>
+            <p>Intelligent lifts. Seamless motion.</p>
         </div>
     </section>
 
+    <!-- Premium System Display Assets Grid -->
     <section class="showcase-section">
         <div class="showcase-header">
             <h2>Premium System <span>Visual Showcase</span></h2>
@@ -494,21 +569,21 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-card">
-                <img src="https://www.nyirlift.hu/public/uploadimages/elgallery/panorama-felvonok/panorama-felvonok-02.jpg" alt="Glass Door Panoramic Lift">
+                <img src="Panorama-Lift.jpg" alt="Glass Door Panoramic Lift">
                 <div class="gallery-info">
                     <h4>Panoramic Glass Door Elevators</h4>
                     <p>Fluid engineering designs that provide sweeping viewpoints while optimizing core structural workspace integrity.</p>
                 </div>
             </div>
             <div class="gallery-card">
-                <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=600" alt="Brass Gold Premium Lift Entry">
+                <img src="Brass lift.png" alt="Brass Gold Premium Lift Entry">
                 <div class="gallery-info">
                     <h4>Luxury Brass Gold Custom Finishes</h4>
                     <p>Electroplated brass configurations engineered to present elite architectural presence across high-end villas and commercial hubs.</p>
                 </div>
             </div>
             <div class="gallery-card">
-                <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=600" alt="Futuristic Capsule Lift Design">
+                <img src="Capsule.png" alt="Futuristic Capsule Lift Design">
                 <div class="gallery-info">
                     <h4>High-Speed Capsule Elevators</h4>
                     <p>Aerodynamic external capsule shells running real-time smart sensor arrays for premium vertical mobility profiles.</p>
@@ -517,6 +592,7 @@
         </div>
     </section>
 
+    <!-- Engineering Operations Categorized Sectors -->
     <section class="segments-section">
         <h2 class="section-title">Specialized Core Systems</h2>
         <div class="segments-grid">
@@ -555,106 +631,87 @@
         </div>
     </section>
 
+    <!-- Modernization Deployment Framework -->
     <section class="modernization-section">
         <div class="modernization-container">
             <div class="mod-text-block">
                 <h2>System <span>Modernization</span> & Complete Replacement</h2>
-                <p>Maximize asset lifespan and ensure full code compliance. We transition aging physical layouts into elite smart transport mechanisms with minimal facility downtime.</p>
-                <a href="https://forms.gle/hYQVUqxpS92t5RUK8" target="_blank" class="btn btn-gold" style="margin-top:1rem;">Request Assessment Form</a>
+                <p>Maximize asset lifespan and ensure full code compliance. We seamlessly transition aging elevator layouts into elite, AI-driven, IoT-enabled smart transport systems with minimal facility downtime.</p>
+                <a href="#consultation" class="btn btn-gold" style="margin-top:1rem;">Request System Audit</a>
             </div>
             <div class="mod-grid">
                 <div class="mod-box">
-                    <h4>Controller Upgrades</h4>
-                    <p>Microprocessor logic replacement to resolve operational errors.</p>
+                    <h4>AI Controller Upgrades</h4>
+                    <p>Cloud AI eliminates errors and optimizes traffic in real-time.</p>
                 </div>
                 <div class="mod-box">
-                    <h4>Safety Enhancements</h4>
-                    <p>Advanced governor adjustments and instantaneous emergency braking configurations.</p>
+                    <h4>IoT Safety & Compliance</h4>
+                    <p>IoT sensors link braking and governors for real-time safety and code compliance.</p>
                 </div>
                 <div class="mod-box">
-                    <h4>Cabin Refurbishments</h4>
-                    <p>Upgrading mechanical structures to premium glass or steel designs.</p>
+                    <h4>Elite Cabin Refurbishments</h4>
+                    <p>Transforms standard cars into custom capsule glass and premium brass-gold structures.</p>
                 </div>
                 <div class="mod-box">
-                    <h4>Total Adaptation</h4>
-                    <p>Old mechanical structural adaptation engineered for future scaling layouts.</p>
+                    <h4>Future-Proof Adaptation</h4>
+                    <p>Adapts legacy mechanical frameworks for smart future scaling with zero business interruption.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Turnkey Lifecycle Matrix - TEXT ALIGNMENT IN CENTER APPLIED -->
     <section class="services-section">
         <h2 class="section-title">Turnkey Service Lifecycles</h2>
         <div class="services-grid">
             <div class="service-card">
-                <h3>Installation</h3>
-                <p>Comprehensive site assessments, full architectural design optimization blueprints, and clean, modular physical installations.</p>
+                <h3>Precision Installation</h3>
+                <p>Advanced site assessments and optimized architectural blueprints paired with clean, modular physical installations.</p>
             </div>
             <div class="service-card">
-                <h3>Maintenance & AMC</h3>
-                <p>Rigorous preventive inspections, custom Annual Maintenance Contracts (AMC), and certified mechanical asset protection.</p>
+                <h3>Predictive Maintenance & AMC</h3>
+                <p>Rigorous preventive inspections and tailored Annual Maintenance Contracts (AMC) to shield your mechanical assets.</p>
             </div>
             <div class="service-card">
                 <h3>24/7 Rapid Response</h3>
-                <p>Round-the-clock physical emergency response squads coupled with immediate technical spare parts support tracks.</p>
+                <p>Round-the-clock emergency response squads backed by immediate technical spare parts support tracks.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <!-- Embedded Google Intake Module Form Target -->
+    <section id="consultation" class="contact-section">
         <h2 class="section-title">Request an Engineering Consultation</h2>
         <div class="contact-grid">
             
-            <div>
+            <!-- Address Layout Mapping References -->
+            <div id="contact">
                 <div class="address-box">
-                    <h3>Headquarters Office (Kovilpatti)</h3>
+                    <h3>Head Office</h3>
                     <p>No.32, Kathiresan Kovil Road 3rd Street,</p>
-                    <p>Kovilpatti, Tamil Nadu - 628502</p>
+                    <p>Kovilpatti, Tuticorin, Tamil Nadu - 628 502.</p>
                 </div>
                 <div class="address-box">
-                    <h3>Branch Office (Tenkasi)</h3>
+                    <h3>Branch Office</h3>
                     <p>1/235-2, South Street, Kadanganeri,</p>
-                    <p>Tenkasi, Tamil Nadu - 627854</p>
+                    <p>Tenkasi, Tamil Nadu - 627 854.</p>
                 </div>
                 <div class="address-box" style="background: var(--navy); color: white;">
-                    <h3 style="color: var(--gold)">Instant Mapping Location</h3>
+                    <h3 style="color: var(--gold)">Instant Mapping Location(s)</h3>
                     <p style="color: white; margin-bottom: 1rem;">View certified office locations directly via Google Maps route networks:</p>
                     <a href="https://share.google/DQlq5l0yOCClo09Tz" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem; width:100%;">📍 Open Google Maps Route</a>
                 </div>
             </div>
 
+            <!-- Integrated Direct Google Forms Embedded Iframe -->
             <div class="form-container">
-                <form onsubmit="alert('Thank you! Your request has been logged. Please make sure to complete the official external Forms link at the top for automated database entry.'); return false;">
-                    <div class="form-group">
-                        <label>Contact Person / Enterprise Name</label>
-                        <input type="text" placeholder="Enter your full name or company" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Location Site</label>
-                        <input type="text" placeholder="e.g., Kovilpatti, Tenkasi, Tirunelveli" required>
-                    </div>
-                    <div class="form-group">
-                        <label>System Vertical Required</label>
-                        <select required>
-                            <option value="">-- Choose Application --</option>
-                            <option value="residential">Residential Lifts / Villa Systems</option>
-                            <option value="passenger">Commercial Passenger Elevators</option>
-                            <option value="hospital">Hospital Stretcher Infrastructure</option>
-                            <option value="industrial">Heavy Material / Goods Moving</option>
-                            <option value="modernization">System Modernization / AMC Contract</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Specific Architectural Project Details</label>
-                        <textarea rows="4" placeholder="Describe the number of stops, dimensional layouts, or loading profiles..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-gold" style="width: 100%;">Log Local Inquiry Profile</button>
-                </form>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfnOuD7DOHfbKzvbPm61Oy5uWUQLLwZT6Juft1l7Npketg20Q/viewform?embedded=true" height="950" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
 
         </div>
     </section>
 
+    <!-- Corporate Footer -->
     <footer>
         <div class="footer-tag">TEKTON <span>ELEVATORS</span></div>
         <p>Bringing Horizons Closer Through Precision Technology.</p>
