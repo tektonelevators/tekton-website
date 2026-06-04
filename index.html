@@ -391,20 +391,21 @@
             gap: 2.5rem;
         }
 
-        .service-card {
+        .service-card, .mod-box {
             padding: 3rem 2rem;
-            background-color: var(--light-bg);
+            background-color: var(--white);
             border-radius: 6px;
             transition: all 0.3s ease;
             text-align: center; /* Centers all content inside headings and body cards */
             border-bottom: 3px solid transparent;
-        }
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
 
-        .service-card:hover {
+        .service-card:hover, .mod-box:hover {
             transform: translateY(-5px);
             border-bottom-color: var(--gold);
             box-shadow: 0 10px 20px rgba(0,0,0,0.04);
-        }
+    }
 
         .service-card h3 {
             color: var(--navy);
@@ -689,7 +690,7 @@
                 <div class="address-box">
                     <h3>Head Office</h3>
                     <p>No.32, Kathiresan Kovil Road 3rd Street,</p>
-                    <p>Kovilpatti, Tuticorin, Tamil Nadu - 628 502.</p>
+                    <p>Kovilpatti, Tamil Nadu - 628 502.</p>
                 </div>
                 <div class="address-box">
                     <h3>Branch Office</h3>
