@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- High-Definition Browser and Google Search Favicon Setup -->
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tekton Elevators | Bringing Horizons Closer Through Precision Technology</title>
-    <!-- Google Fonts: Elegant Editorial Heading Font paired with Clean Body Text -->
+    
+    <!-- Premium Fonts Setup -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
@@ -16,7 +21,6 @@
             --dark: #0A1118;
             --light-bg: #F4F7FA;
             --white: #FFFFFF;
-            /* Luxury Font Pair Definitions */
             --font-luxury: 'Playfair Display', Georgia, serif;
             --font-body: 'Plus Jakarta Sans', Arial, sans-serif;
         }
@@ -32,18 +36,18 @@
             color: var(--dark);
             font-family: var(--font-body);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Luxury Heading Elements Override */
-        h1, h2, h3, .nav-logo-text {
+        h1, h2, h3 {
             font-family: var(--font-luxury);
         }
 
-        /* Top Bar Info */
+        /* Top Info Strip */
         .top-bar {
             background-color: var(--dark);
             color: var(--white);
-            padding: 0.5rem 10%;
+            padding: 0.6rem 10%;
             display: flex;
             justify-content: space-between;
             font-size: 0.85rem;
@@ -54,57 +58,62 @@
         .top-bar a {
             color: var(--gold);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
         }
 
-        /* Navbar Layout */
+        /* Fixed Premium Navbar Configuration */
         nav {
             background-color: var(--white);
-            padding: 1rem 10%;
+            padding: 0.8rem 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .nav-logo-text {
-            font-size: 1.9rem;
-            font-weight: 800;
-            color: var(--navy);
-            letter-spacing: 1px;
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
         }
 
-        .nav-logo-text span {
-            color: var(--gold);
-            font-weight: 400;
-            font-style: italic;
+        /* Native Logo Image Scaling Handler */
+        .logo-img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
 
         .nav-tagline {
             font-size: 0.75rem;
-            color: var(--dark);
+            color: #4B5563;
             letter-spacing: 1px;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 600;
+            border-left: 1px solid #E2E8F0;
+            padding-left: 15px;
+            max-width: 400px;
+            display: inline-block;
         }
 
-        /* Hero Grid Layout */
+        /* Responsive Hero Module Layout */
         .hero {
-            background: linear-gradient(rgba(0, 45, 98, 0.85), rgba(10, 17, 24, 0.9)), url('Tekton background.png') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 45, 98, 0.88), rgba(10, 17, 24, 0.92)), url('Tekton background.png') no-repeat center center/cover;
             color: var(--white);
-            padding: 8rem 10%;
+            padding: 9rem 10% 8rem 10%;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 3.6rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
+            line-height: 1.25;
         }
 
         .hero h1 span {
@@ -115,8 +124,8 @@
 
         .hero p {
             font-size: 1.25rem;
-            max-width: 800px;
-            margin: 0 auto 2.5rem auto;
+            max-width: 750px;
+            margin: 0 auto 3rem auto;
             color: #D1D5DB;
             font-weight: 300;
         }
@@ -124,22 +133,23 @@
         .cta-group {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
         }
 
-        /* Button Frameworks */
+        /* Interactive Custom Button Frameworks */
         .btn {
-            padding: 1rem 2rem;
+            padding: 1rem 2.2rem;
             font-size: 0.95rem;
             font-weight: 700;
             border-radius: 4px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             display: inline-flex;
             align-items: center;
             justify-content: center;
             letter-spacing: 0.5px;
+            cursor: pointer;
         }
 
         .btn-gold {
@@ -151,6 +161,7 @@
         .btn-gold:hover {
             background-color: transparent;
             color: var(--gold);
+            transform: translateY(-2px);
         }
 
         .btn-outline {
@@ -162,26 +173,29 @@
         .btn-outline:hover {
             background-color: var(--white);
             color: var(--navy);
+            transform: translateY(-2px);
         }
 
         .btn-whatsapp {
             background-color: #25D366;
             color: white;
-            border: none;
+            border: 2px solid #25D366;
         }
         
         .btn-whatsapp:hover {
-            background-color: #1cbd55;
+            background-color: transparent;
+            color: #25D366;
+            transform: translateY(-2px);
         }
 
-        /* Triple Pill Badge Section */
+        /* Value Framework Sections */
         .traction-bar {
             background-color: var(--navy);
             color: var(--white);
-            padding: 3rem 10%;
+            padding: 3.5rem 10%;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             text-align: center;
             border-bottom: 4px solid var(--gold);
         }
@@ -189,8 +203,7 @@
         .traction-item h3 {
             color: var(--gold);
             font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
+            margin-bottom: 0.6rem;
         }
         
         .traction-item p {
@@ -199,10 +212,10 @@
             color: #E2E8F0;
         }
 
-        /* Dynamic Showcase Gallery */
+        /* Showcase Dynamic Media Cards */
         .showcase-header {
             text-align: center;
-            padding: 5rem 10% 2rem 10%;
+            padding: 6rem 10% 3rem 10%;
         }
 
         .showcase-header h2 {
@@ -215,55 +228,49 @@
             font-weight: 400;
             font-style: italic;
         }
-        
-        .showcase-header p {
-            font-weight: 300;
-            color: #4B5563;
-        }
 
         .gallery-grid {
-            padding: 0 10% 4rem 10%;
+            padding: 0 10% 6rem 10%;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .gallery-card {
             background: var(--white);
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
         }
 
         .gallery-card img {
             width: 100%;
-            height: 350px;
+            height: 380px;
             object-fit: cover;
             border-bottom: 4px solid var(--navy);
         }
 
         .gallery-info {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .gallery-info h4 {
-            font-family: var(--font-luxury);
             color: var(--navy);
             font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .gallery-info p {
-            font-size: 0.9rem;
-            color: #4B5563;
+            margin-bottom: 0.6rem;
         }
 
-        /* Segment Grid Components */
+        /* Main Structural Title Components */
         .section-title {
             text-align: center;
             font-size: 2.8rem;
             color: var(--navy);
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             position: relative;
         }
 
@@ -273,11 +280,11 @@
             height: 2px;
             background-color: var(--gold);
             display: block;
-            margin: 0.75rem auto 0 auto;
+            margin: 0.8rem auto 0 auto;
         }
 
         .segments-section {
-            padding: 5rem 10%;
+            padding: 6rem 10%;
             background-color: var(--white);
         }
 
@@ -292,13 +299,13 @@
             padding: 2.5rem 2rem;
             border-radius: 6px;
             border-top: 4px solid var(--gold);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
         }
 
         .segment-card h3 {
             color: var(--navy);
             margin-bottom: 1.25rem;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
         }
 
@@ -307,9 +314,9 @@
         }
 
         .segment-card ul li {
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.7rem;
             font-size: 0.95rem;
-            padding-left: 1.4rem;
+            padding-left: 1.5rem;
             position: relative;
             color: #334155;
         }
@@ -322,23 +329,23 @@
             font-weight: bold;
         }
 
-        /* Engineering Modernization Block */
+        /* Modernization Systems Blocks */
         .modernization-section {
-            padding: 5rem 10%;
+            padding: 6rem 10%;
             background-color: var(--light-bg);
         }
 
         .modernization-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .mod-text-block h2 {
             font-size: 2.8rem;
             color: var(--navy);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             line-height: 1.2;
         }
 
@@ -347,41 +354,44 @@
             font-weight: 400;
             font-style: italic;
         }
-        
-        .mod-text-block p {
-            font-weight: 300;
-            color: #334155;
-        }
 
         .mod-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
         }
 
-        .mod-box {
+        /* Unified Symmetric Center Styling */
+        .service-card, .mod-box {
+            padding: 3rem 2rem;
             background-color: var(--white);
-            padding: 1.5rem;
-            border-radius: 6px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-            border-top: 3px solid var(--navy);
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-align: center;
+            border-bottom: 3px solid transparent;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
         }
 
-        .mod-box h4 {
-            font-family: var(--font-luxury);
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+        .service-card:hover, .mod-box:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--gold);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
         }
-        
-        .mod-box p {
-            font-size: 0.88rem;
+
+        .mod-box h4, .service-card h3 {
+            color: var(--navy);
+            margin-bottom: 0.8rem;
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+
+        .mod-box p, .service-card p {
+            font-size: 0.95rem;
             color: #4B5563;
         }
 
-        /* Core Services - TEXT CENTER ALIGNED */
         .services-section {
-            padding: 5rem 10%;
+            padding: 6rem 10%;
             background-color: var(--white);
         }
 
@@ -391,37 +401,9 @@
             gap: 2.5rem;
         }
 
-        .service-card, .mod-box {
-            padding: 3rem 2rem;
-            background-color: var(--white);
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            text-align: center; /* Centers all content inside headings and body cards */
-            border-bottom: 3px solid transparent;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-    }
-
-        .service-card:hover, .mod-box:hover {
-            transform: translateY(-5px);
-            border-bottom-color: var(--gold);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
-    }
-
-        .service-card h3 {
-            color: var(--navy);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .service-card p {
-            color: #4B5563;
-            font-size: 0.95rem;
-        }
-
-        /* Lead Contact Center Container Layout */
+        /* Clean Lead Capture Destination Section */
         .contact-section {
-            padding: 5rem 10%;
+            padding: 6rem 10%;
             background-color: var(--light-bg);
         }
 
@@ -429,50 +411,58 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .address-box {
             background-color: var(--white);
-            padding: 2rem;
-            border-radius: 6px;
+            padding: 2.5rem;
+            border-radius: 8px;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
             border-top: 3px solid var(--navy);
         }
 
         .address-box h3 {
             color: var(--navy);
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.35rem;
             font-weight: 700;
         }
 
         .address-box p {
             font-size: 0.95rem;
             color: #4B5563;
+            margin-bottom: 0.4rem;
         }
 
-        /* Responsive Form Framing Workspace */
-        .form-container {
+        /* High Conversion Final Action Dashboard Block */
+        .portal-container {
             background-color: var(--white);
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            overflow: hidden;
-            width: 100%;
-        }
-        
-        .form-container iframe {
-            width: 100%;
-            display: block;
+            padding: 4rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+            text-align: center;
+            border-left: 6px solid var(--gold);
         }
 
-        /* Footer Execution */
+        .portal-container h3 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .portal-container p {
+            color: #4B5563;
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* Premium Responsive Systems Design Frameworks */
         footer {
             background-color: var(--dark);
             color: #94A3B8;
-            padding: 4rem 10% 2rem 10%;
+            padding: 5rem 10% 2.5rem 10%;
             text-align: center;
             border-top: 4px solid var(--gold);
         }
@@ -490,25 +480,102 @@
             font-style: italic;
             font-weight: 400;
         }
-        
-        footer p {
-            font-weight: 300;
-        }
 
         .footer-copyright {
             font-size: 0.85rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
             border-top: 1px solid #1E293B;
-            padding-top: 1.5rem;
+            padding-top: 2rem;
             color: #64748B;
         }
 
+        /* ==========================================================================
+           🌟 COMPREHENSIVE PREMIUM MOBILE OPTIMIZATION ENGINE 
+           ========================================================================== */
+        @media (max-width: 991px) {
+            nav { padding: 1rem 5%; }
+            .nav-tagline { display: none; } /* Hide tagline on mid-screens to prevent crowding */
+            .hero h1 { font-size: 3rem; }
+        }
+
         @media (max-width: 768px) {
-            .top-bar { justify-content: center; text-align: center; }
-            .hero h1 { font-size: 2.5rem; }
-            .section-title { font-size: 2.2rem; }
-            .form-container { padding: 0.25rem; }
-            .mod-grid { grid-template-columns: 1fr; }
+            .top-bar {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 0.8rem 5%;
+                gap: 5px;
+            }
+            
+            nav {
+                flex-direction: column;
+                padding: 1.2rem 5%;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .logo-img {
+                height: 48px; /* Slightly more compact on standard mobile viewports */
+            }
+
+            .hero {
+                padding: 6rem 5% 5rem 5%;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+                margin-bottom: 2.2rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%; /* Force full width touch-targets on native touchscreens */
+                padding: 1.1rem 2rem;
+            }
+
+            .traction-bar {
+                padding: 3rem 5%;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .showcase-header { padding: 4rem 5% 2rem 5%; }
+            .showcase-header h2, .section-title, .mod-text-block h2 { font-size: 2rem; }
+            
+            .gallery-grid, .segments-section, .modernization-section, .services-section, .contact-section {
+                padding: 4rem 5%;
+            }
+
+            .gallery-card img {
+                height: 280px; /* Prevent over-stretching on modern tall phone screens */
+            }
+
+            .mod-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portal-container {
+                padding: 3rem 1.5rem;
+            }
+
+            .portal-container h3 {
+                font-size: 1.75rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -526,12 +593,13 @@
 
     <!-- Sticky Main Navigation -->
     <nav>
+        <a href="#" class="brand-container">
+            <!-- Rendered Custom Image Branding Reference Asset -->
+            <img src="IMG_0004.jpeg" alt="Tekton Elevators Logo" class="logo-img">
+        </a>
+        <div class="nav-tagline">Bringing Horizons Closer Through Precision Technology</div>
         <div>
-            <div class="nav-logo-text">TEKTON <span>ELEVATORS</span></div>
-            <div class="nav-tagline">Bringing Horizons Closer Through Precision Technology</div>
-        </div>
-        <div>
-            <a href="#consultation" class="btn btn-gold" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Service Request Form</a>
+            <a href="https://forms.gle/hYQVUqxpS92t5RUK8" target="_blank" class="btn btn-gold" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Service Request Form</a>
         </div>
     </nav>
 
@@ -541,8 +609,8 @@
         <p>Your unique specifications meet our high-precision engineering. We manufacture, install, and service intelligent elevators engineered for absolute safety and built for life.</p>
         <div class="cta-group">
             <a href="https://wa.me/918925448131" target="_blank" class="btn btn-whatsapp">ᯓ➤ WhatsApp Consultation</a>
-            <a href="#consultation" class="btn btn-gold">Submit Service Request</a>
-            <a href="#contact" class="btn btn-outline">Contact Offices</a>
+            <a href="https://forms.gle/hYQVUqxpS92t5RUK8" target="_blank" class="btn btn-gold">Launch Service Form</a>
+            <a href="#contact" class="btn btn-outline">Our Offices</a>
         </div>
     </section>
 
@@ -638,7 +706,7 @@
             <div class="mod-text-block">
                 <h2>System <span>Modernization</span> & Complete Replacement</h2>
                 <p>Maximize asset lifespan and ensure full code compliance. We seamlessly transition aging elevator layouts into elite, AI-driven, IoT-enabled smart transport systems with minimal facility downtime.</p>
-                <a href="#consultation" class="btn btn-gold" style="margin-top:1rem;">Request System Audit</a>
+                <a href="https://forms.gle/hYQVUqxpS92t5RUK8" target="_blank" class="btn btn-gold" style="margin-top:1rem;">Request System Audit</a>
             </div>
             <div class="mod-grid">
                 <div class="mod-box">
@@ -661,7 +729,7 @@
         </div>
     </section>
 
-    <!-- Turnkey Lifecycle Matrix - TEXT ALIGNMENT IN CENTER APPLIED -->
+    <!-- Turnkey Lifecycle Matrix -->
     <section class="services-section">
         <h2 class="section-title">Turnkey Service Lifecycles</h2>
         <div class="services-grid">
@@ -680,9 +748,9 @@
         </div>
     </section>
 
-    <!-- Embedded Google Intake Module Form Target -->
+    <!-- Updated Seamless Request Dashboard Terminal Layout -->
     <section id="consultation" class="contact-section">
-        <h2 class="section-title">Request an Engineering Consultation</h2>
+        <h2 class="section-title">Connect With Our Engineers</h2>
         <div class="contact-grid">
             
             <!-- Address Layout Mapping References -->
@@ -704,9 +772,14 @@
                 </div>
             </div>
 
-            <!-- Integrated Direct Google Forms Embedded Iframe -->
-            <div class="form-container">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfnOuD7DOHfbKzvbPm61Oy5uWUQLLwZT6Juft1l7Npketg20Q/viewform?embedded=true" height="950" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <!-- Contextual High Conversion Action Hub Component Box -->
+            <div class="portal-container">
+                <h3>Start Your Inquiry</h3>
+                <p>To provide accurate project execution models, loading blueprints, or tailored AMC price assessments, please access our dedicated engineering database channel.</p>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <a href="https://forms.gle/hYQVUqxpS92t5RUK8" target="_blank" class="btn btn-gold" style="width: 100%;">📋 Open Official Secure Google Form</a>
+                    <a href="https://wa.me/918925448131" target="_blank" class="btn btn-whatsapp" style="width: 100%;">💬 Speak to an Expert via WhatsApp</a>
+                </div>
             </div>
 
         </div>
